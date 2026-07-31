@@ -762,11 +762,24 @@ const EPICS = [
     complexity: "Low", complexityRank: 1, effort: "S · ~1 session",
     risk: "low", riskNote: "",
     note: "Once #9 exists: first deploy of this pack standalone in Azure, replacing reliance on the original <span class=\"mono\">amplify-fabric-ai-api</span> demo. Live-verify end to end before calling any refactor phase done, same standard Energy/GxP hold themselves to.", dep: 9 },
+
+  { id: 16, title: "Landing page review — align Home.jsx with Energy/GxP's shared pattern", group: "ui", groupLabel: "Front-end scope & UX",
+    scope: "interaction", scopeLabel: "Interaction",
+    complexity: "Med", complexityRank: 2, effort: "M · ~1 session",
+    risk: "low", riskNote: "Purely visual/structural rework of one page — no data or routing changes, low blast radius.",
+    note: "Audited 2026-07-31: MFG's <span class=\"mono\">Home.jsx</span> (359 lines) is a bespoke, heavily inline-styled \"marketing hero\" page — gradient banner, stat-tile grid, a 3-tier agent architecture explainer, a 6-tile domain grid, a CTA band. Neither sibling looks like this. <span class=\"mono\">FrontierIQ-Energy</span>'s landing page (<span class=\"mono\">HowItWorks.tsx</span>, 35 lines) and <span class=\"mono\">FrontierIQ-GxP</span>'s (<span class=\"mono\">Home.tsx</span>, 80 lines) both use a shared, lightweight, CSS-class-driven approach (<span class=\"mono\">landing-hero</span>/<span class=\"mono\">landing-eyebrow</span> classes in Energy; <span class=\"mono\">.page</span>/<span class=\"mono\">.card</span>/<span class=\"mono\">.stats-row</span> in GxP) — short intro, then a handful of clickable nav cards into the app's real sections, deliberately undecorated. Needs a decision: trim MFG's landing page down to the shared pattern (consistency across the IQ suite), or keep the richer version deliberately (it may read better for a first-look demo of a more feature-dense pack) — not purely mechanical, a design call." },
+
+  { id: 17, title: "PIN/access-control gate + Admin Permissions page (parity with GxP/Energy)", group: "access", groupLabel: "Access control & admin",
+    scope: "interaction", scopeLabel: "Interaction",
+    complexity: "Med", complexityRank: 2, effort: "M · ~1 session",
+    risk: "low", riskNote: "Well-trodden pattern — both siblings already run this in production, this is porting proven code, not designing something new. Main risk is sequencing: needs #5's shared/config.py (splash_pin/admin_pin settings) to land cleanly first.",
+    note: "Audited 2026-07-31: MFG currently has <strong>zero</strong> splash-gate/PIN infrastructure — no <span class=\"mono\">SplashGate.tsx</span>, no <span class=\"mono\">/auth/verify-pin</span> route, no Admin Permissions page, confirmed by a repo-wide search (zero matches for <span class=\"mono\">SplashGate|verify-pin|access-log|access-requests</span>). Both Energy and GxP have the full pattern: <span class=\"mono\">SplashGate.tsx</span> (full-screen PIN lock + embedded \"Request Access\" form, backed by <span class=\"mono\">POST /auth/verify-pin</span> + <span class=\"mono\">POST /access-requests</span>, 1-hour session unlock) and <span class=\"mono\">AdminPermissions.tsx</span> (reachable via <span class=\"mono\">?admin</span>, gated by <span class=\"mono\">POST /auth/verify-admin-pin</span>, review/approve/deny via <span class=\"mono\">GET/PUT /access-requests</span>). <strong>Build against GxP's version specifically, not Energy's</strong> — GxP's <span class=\"mono\">AdminPermissions.tsx</span> additionally has an Access Log section (<span class=\"mono\">GET /access-log</span>, every successful PIN unlock with IP/UA/timestamp) that Energy is still missing (see FrontierIQ-Energy's own backlog #48). Deliberate demeanor-only security, same as both siblings document about themselves: one shared PIN, no session token, no rate limiting — a deterrent for a public demo URL, not real access control." },
 ];
 
 const GROUP_ORDER = [
   { key: "rebrand",  label: "Rebrand & de-Amplify" },
   { key: "platform", label: "Platform integration" },
+  { key: "access",   label: "Access control & admin" },
   { key: "ui",       label: "Front-end scope & UX" },
   { key: "deploy",   label: "Deploy & infra" },
   { key: "hold",     label: "Deferred (documented, not built)" },
