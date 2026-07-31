@@ -5,3 +5,6 @@ __pycache__/
 *.pyc
 node_modules/
 dist/
+mfg_core/health_logs/
+mfg_core/chat_logs/
+*.log

@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom'
 import {
   Zap, Layers, BarChart3, Database, Shield, Server,
   MessageSquare, TrendingUp, AlertTriangle, Lightbulb,
-  Factory, CalendarClock, Activity, Package, FlaskConical,
-  LayoutDashboard, Wrench, Home
+  Factory, CalendarClock, Calendar, Activity, Package, FlaskConical,
+  LayoutDashboard, Wrench, Home, Users
 } from 'lucide-react'
 import { useProductConfig } from '../contexts/ProductConfigContext'
 import frontierMark from '../assets/frontier-mark-cyan.png'
@@ -28,6 +28,7 @@ const sections = [
     items: [
       { path: '/production-intelligence', name: 'Production Intelligence', icon: LayoutDashboard },
       { path: '/schedule-optimisation', name: 'Schedule Optimisation', icon: CalendarClock },
+      { path: '/production-schedule', name: 'Production Schedule', icon: Calendar },
     ]
   },
   {
@@ -37,6 +38,7 @@ const sections = [
     items: [
       { path: '/ot-data-insights', name: 'OT Data Insights', icon: Activity },
       { path: '/ot-process-insights', name: 'OT Process Insights', icon: Layers },
+      { path: '/ot-mvp-solutions', name: 'AI Assisted Connected Worker', icon: Users },
       { path: '/maintenance-orders', name: 'Maintenance Orders', icon: Wrench },
     ]
   },

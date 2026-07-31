@@ -6,7 +6,6 @@ function PagesTab({ config, updateConfig, validationErrors }) {
     { path: '/', name: 'Home Dashboard' },
     { path: '/production-ops', name: 'Production Operations' },
     { path: '/data-agent', name: 'Data Agent' },
-    { path: '/platform-control', name: 'Platform Control' },
     { path: '/settings', name: 'Settings' }
   ]
 

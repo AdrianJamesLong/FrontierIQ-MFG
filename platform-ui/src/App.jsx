@@ -19,11 +19,13 @@ import ProcessOptimization from './pages/ProcessOptimization'
 import Tier1AnalyticalAgents from './pages/Tier1AnalyticalAgents'
 import Tier2DiagnosticRCAAgents from './pages/Tier2DiagnosticRCAAgents'
 import Tier3PredictivePrescriptiveAgents from './pages/Tier3PredictivePrescriptiveAgents'
+import ProductionSchedule from './pages/ProductionSchedule'
 
 // Asset Intelligence
 import PlantPerformance from './pages/PlantPerformance'
 import OTDataInsights from './pages/OTDataInsights'
 import OTProcessInsights from './pages/OTProcessInsights'
+import OTMVPSolutions from './pages/OTMVPSolutions'
 import MaintenanceOrders from './pages/MaintenanceOrders'
 
 // Energy Optimisation
@@ -45,6 +47,10 @@ import CIPYieldTracker from './pages/CIPYieldTracker'
 import DataExplorer from './pages/DataExplorer'
 import DataQuality from './pages/DataQuality'
 import AppHealth from './pages/AppHealth'
+
+// Utility — reachable from TopBar, not the sidebar
+import Settings from './pages/Settings'
+import HelpCentre from './pages/HelpCentre'
 
 import './App.css'
 
@@ -73,11 +79,13 @@ function App() {
                 <Route path="/tier1-analytical-agents" element={<Tier1AnalyticalAgents />} />
                 <Route path="/tier2-diagnostic-rca-agents" element={<Tier2DiagnosticRCAAgents />} />
                 <Route path="/tier3-predictive-prescriptive-agents" element={<Tier3PredictivePrescriptiveAgents />} />
+                <Route path="/production-schedule" element={<ProductionSchedule />} />
 
                 {/* Asset Intelligence */}
                 <Route path="/plant-performance" element={<PlantPerformance />} />
                 <Route path="/ot-data-insights" element={<OTDataInsights />} />
                 <Route path="/ot-process-insights" element={<OTProcessInsights />} />
+                <Route path="/ot-mvp-solutions" element={<OTMVPSolutions />} />
                 <Route path="/maintenance-orders" element={<MaintenanceOrders />} />
 
                 {/* Energy Optimisation */}
@@ -99,6 +107,10 @@ function App() {
                 <Route path="/data-explorer" element={<DataExplorer />} />
                 <Route path="/data-quality" element={<DataQuality />} />
                 <Route path="/app-health" element={<AppHealth />} />
+
+                {/* Utility */}
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/help-centre" element={<HelpCentre />} />
               </Routes>
             </main>
           </div>
