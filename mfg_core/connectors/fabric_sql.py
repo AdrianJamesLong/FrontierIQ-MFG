@@ -1,7 +1,8 @@
 """
-Microsoft Fabric SQL Analytics Endpoint connector — Amplify Industrial (fabric-ai app)
+Microsoft Fabric SQL Analytics Endpoint connector — FrontierIQ-MFG
 
-Tables (dbo schema in AmplifyIndustrial Lakehouse):
+Tables (dbo schema in the "AmplifyIndustrial" Lakehouse — real deployed
+Fabric database name, inherited from this app's origin repo, not renamed):
   ot_process_events    — OT tag events from NovaChem Grangemouth
       timestamp, tag, val, enterprise, site, area, line, equipment,
       sub_equipment, uns_namespace, EventProcessedUtcTime

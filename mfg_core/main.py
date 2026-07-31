@@ -1,4 +1,4 @@
-# FastAPI backend for Amplify Beverages Production Ops App
+# FastAPI backend for FrontierIQ-MFG (NovaChem manufacturing operations)
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -223,7 +223,7 @@ async def root():
     _fe = _Path(__file__).parent / "frontend_dist" / "index.html"
     if _fe.exists():
         return _FR(str(_fe))
-    return {"message": "Amplify Industrial Production Ops API"}
+    return {"message": "FrontierIQ-MFG Production Ops API"}
 
 
 @app.get("/api/hello", response_model=MessageResponse)

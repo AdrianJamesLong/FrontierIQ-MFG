@@ -6,6 +6,7 @@ import {
   LayoutDashboard, Wrench, Home
 } from 'lucide-react'
 import { useProductConfig } from '../contexts/ProductConfigContext'
+import frontierMark from '../assets/frontier-mark-cyan.png'
 import './Sidebar.css'
 
 const sections = [
@@ -97,8 +98,11 @@ function Sidebar() {
     <div className="sidebar">
       {/* Brand */}
       <div className="sidebar-header">
-        <span className="sidebar-brand-primary">Manufacturing Intelligence</span>
-        <span className="sidebar-brand-secondary">and Optimization</span>
+        <div className="sidebar-brand-row">
+          <img src={frontierMark} alt="FrontierIQ-MFG" className="sidebar-brand-mark" />
+          <span className="sidebar-brand-title">FrontierIQ<span className="accent">-MFG</span></span>
+        </div>
+        <span className="sidebar-brand-secondary">Manufacturing Intelligence &amp; Optimization</span>
         {isPreviewMode && config && (
           <div className="sidebar-preview-badge">
             <Eye size={12} />

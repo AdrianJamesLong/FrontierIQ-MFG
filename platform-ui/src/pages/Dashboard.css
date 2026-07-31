@@ -1,4 +1,4 @@
-/* Fabric AI colour palette */
+/* FrontierIQ-MFG colour palette (--coke-red* names are a leftover misnomer from an earlier Coke bottling demo — values are the navy brand palette, not red; not renamed yet, see backlog housekeeping item) */
 :root {
   --coke-red: #1C3668;
   --coke-red-dark: #152B55;

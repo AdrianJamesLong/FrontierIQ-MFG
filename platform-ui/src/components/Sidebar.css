@@ -1,4 +1,4 @@
-/* Fabric AI sidebar · flat always-visible nav */
+/* FrontierIQ-MFG sidebar · flat always-visible nav */
 
 .sidebar {
   width: 220px;
@@ -23,6 +23,31 @@
   align-items: flex-start;
   gap: 2px;
   flex-shrink: 0;
+}
+
+.sidebar-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-brand-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sidebar-brand-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-brand-title .accent {
+  color: #7BA5CE;
 }
 
 .sidebar-brand-primary {
