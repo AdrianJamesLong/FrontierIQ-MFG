@@ -1,0 +1,147 @@
+/* ============================================
+   AI STUDIO LAB - DESIGN LIBRARY STYLING
+   Compact layout with tech fonts
+   ============================================ */
+
+/* Import tech-style fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Tech color variables */
+:root {
+  --tech-gray: #6b7280;
+  --tech-dark-gray: #4b5563;
+  --tech-light-gray: #9ca3af;
+  --tech-red: #1C3668;
+}
+
+/* Main AI Studio Lab Container */
+.ai-studio-lab-page {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+}
+
+/* Page Title - Orbitron uppercase */
+.ai-studio-lab-title {
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--tech-gray) !important;
+}
+
+/* Page Subtitle - Rajdhani */
+.ai-studio-lab-subtitle {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em !important;
+  color: #666 !important;
+}
+
+/* Tab Navigation - Orbitron uppercase */
+.ai-studio-tab-label {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+/* Section Headers (H3) - Orbitron uppercase */
+.ai-studio-section-header {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* Card Headers (H4) - Orbitron uppercase */
+.ai-studio-card-header {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Labels - Rajdhani uppercase */
+.ai-studio-label {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+/* Body text and descriptions - Rajdhani */
+.ai-studio-text {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Metric values - Orbitron bold */
+.ai-studio-metric-value {
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Agent names - Rajdhani bold */
+.ai-studio-agent-name {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* Buttons - Orbitron uppercase */
+.ai-studio-button {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Input fields - Rajdhani */
+.ai-studio-input {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Select dropdowns - Rajdhani */
+.ai-studio-select {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Agent sidebar items */
+.ai-studio-agent-card {
+  font-family: 'Rajdhani', sans-serif !important;
+}
+
+.ai-studio-agent-card-name {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.ai-studio-agent-card-description {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Badge text */
+.ai-studio-badge {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Alert text */
+.ai-studio-alert-title {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.ai-studio-alert-text {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.01em !important;
+}

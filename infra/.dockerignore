@@ -1,0 +1,17 @@
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+backend/.env
+backend/.env.*
+backend/*.log
+backend/chat_logs/
+backend/health_logs/
+backend/test.db
+backend/*.md
+frontend/node_modules/
+frontend/src/
+frontend/public/
+frontend/*.json
+frontend/*.ts
+frontend/*.html
+frontend/vite.config.*

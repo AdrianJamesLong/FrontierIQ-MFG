@@ -1,0 +1,312 @@
+/* ============================================
+   DESIGN LIBRARY - SCI-FI/TECH FONT STYLING
+   ============================================ */
+
+/* Import a tech-style font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* Root variables for consistent theming */
+:root {
+  --tech-primary: #6b7280;
+  --tech-secondary: #4b5563;
+  --tech-accent: #9ca3af;
+  --tech-bg: #1f2937;
+  --tech-bg-light: #374151;
+  --tech-glow: rgba(107, 114, 128, 0.3);
+}
+
+/* Main Design Library Container */
+.design-library-container {
+  font-family: 'Orbitron', 'Rajdhani', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: var(--tech-primary);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Main Title - "DESIGN LIBRARY" or "Sci-Fi / Tech Fonts" style */
+.design-library-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tech-primary);
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 10px var(--tech-glow);
+}
+
+/* Alternative title with slash separator */
+.design-library-title-alt {
+  font-family: 'Orbitron', monospace;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.4;
+}
+
+/* Section Headers */
+.design-library-section-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tech-accent);
+  margin: 2rem 0 1rem 0;
+  border-bottom: 2px solid var(--tech-secondary);
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 8px var(--tech-glow);
+}
+
+/* Subsection Headers */
+.design-library-subsection {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tech-primary);
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+/* Body Text */
+.design-library-text {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+/* Tech-style Cards */
+.design-library-card {
+  background: var(--tech-bg-light);
+  border: 1px solid var(--tech-secondary);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.design-library-card:hover {
+  border-color: var(--tech-accent);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--tech-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Tech-style Links */
+.design-library-link {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--tech-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.design-library-link:hover {
+  color: #d1d5db;
+  text-shadow: 0 0 10px var(--tech-glow);
+}
+
+.design-library-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--tech-accent);
+  transition: width 0.3s ease;
+}
+
+.design-library-link:hover::after {
+  width: 100%;
+}
+
+/* Tech-style Buttons */
+.design-library-button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f2937;
+  background: var(--tech-accent);
+  border: 2px solid var(--tech-accent);
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.design-library-button:hover {
+  background: transparent;
+  color: var(--tech-accent);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--tech-glow);
+  transform: translateY(-2px);
+}
+
+/* Tech-style Code Blocks */
+.design-library-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  background: #111827;
+  color: #10b981;
+  border: 1px solid var(--tech-secondary);
+  border-left: 4px solid var(--tech-accent);
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Tech-style Tables */
+.design-library-table {
+  font-family: 'Rajdhani', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--tech-bg-light);
+}
+
+.design-library-table th {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--tech-bg);
+  color: var(--tech-accent);
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--tech-accent);
+}
+
+.design-library-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--tech-secondary);
+  color: #9ca3af;
+}
+
+.design-library-table tr:hover {
+  background: var(--tech-bg);
+}
+
+/* Tech-style Badges */
+.design-library-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--tech-secondary);
+  color: var(--tech-accent);
+  border: 1px solid var(--tech-accent);
+  border-radius: 2px;
+  margin: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Tech Border Effect */
+.design-library-border-effect {
+  position: relative;
+  padding: 2rem;
+  background: var(--tech-bg-light);
+}
+
+.design-library-border-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--tech-accent);
+  opacity: 0.5;
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.3;
+    box-shadow: 0 0 5px var(--tech-glow);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px var(--tech-glow);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .design-library-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .design-library-title-alt {
+    font-size: 2rem;
+  }
+  
+  .design-library-section-header {
+    font-size: 1.8rem;
+  }
+  
+  .design-library-subsection {
+    font-size: 1.4rem;
+  }
+}
+
+/* Utility Classes */
+.tech-text-center {
+  text-align: center;
+}
+
+.tech-text-left {
+  text-align: left;
+}
+
+.tech-text-right {
+  text-align: right;
+}
+
+.tech-glow-effect {
+  text-shadow: 0 0 10px var(--tech-glow);
+}
+
+.tech-uppercase {
+  text-transform: uppercase;
+}
+
+.tech-spacing-wide {
+  letter-spacing: 0.15em;
+}
+
+.tech-spacing-normal {
+  letter-spacing: 0.05em;
+}

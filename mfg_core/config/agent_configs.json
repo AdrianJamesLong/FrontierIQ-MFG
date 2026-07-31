@@ -1,0 +1,274 @@
+{
+  "performance_analyst": {
+    "name": "Performance Analyst",
+    "description": "Analyzes production performance metrics and KPIs",
+    "status": "production",
+    "temperature": 0.7,
+    "maxTokens": 4000,
+    "systemPrompt": "You are a performance analyst agent focused on analyzing production metrics, OEE, throughput, and operational KPIs.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.8,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "data_quality": {
+    "name": "Data Quality",
+    "description": "Ensures data integrity and quality standards",
+    "status": "production",
+    "temperature": 0.6,
+    "maxTokens": 3500,
+    "systemPrompt": "You are a data quality agent focused on validating data integrity, detecting anomalies, and ensuring data quality standards.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.85,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "line_operations": {
+    "name": "Line Operations",
+    "description": "Monitors production line operations and efficiency",
+    "status": "production",
+    "temperature": 0.7,
+    "maxTokens": 4000,
+    "systemPrompt": "You are a line operations agent focused on monitoring production lines, analyzing efficiency, and identifying operational issues.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.8,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "downtime_rca": {
+    "name": "Downtime RCA",
+    "description": "Performs root cause analysis on downtime events",
+    "status": "production",
+    "temperature": 0.5,
+    "maxTokens": 4500,
+    "systemPrompt": "You are a root cause analysis agent focused on investigating downtime events, identifying causes, and recommending corrective actions.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.85,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "bottleneck_constraint": {
+    "name": "Bottleneck & Constraint",
+    "description": "Identifies production bottlenecks and constraints",
+    "status": "production",
+    "temperature": 0.6,
+    "maxTokens": 4000,
+    "systemPrompt": "You are a bottleneck analysis agent focused on identifying production constraints, throughput limitations, and optimization opportunities.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.8,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "operations_recommendation": {
+    "name": "Operations Recommendation",
+    "description": "Generates actionable operational recommendations",
+    "status": "production",
+    "temperature": 0.4,
+    "maxTokens": 4000,
+    "systemPrompt": "You are an operations recommendation agent focused on generating actionable recommendations to improve production efficiency and performance.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.9,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "executive_briefing": {
+    "name": "Executive Briefing",
+    "description": "Creates executive-level summaries and insights",
+    "status": "production",
+    "temperature": 0.5,
+    "maxTokens": 3500,
+    "systemPrompt": "You are an executive briefing agent focused on creating concise, high-level summaries of production performance for executive decision-making.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.85,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  },
+  "analyze_performance": {
+    "name": "Performance Analysis (Legacy)",
+    "description": "Legacy performance analysis functionality",
+    "status": "production",
+    "temperature": 0.7,
+    "maxTokens": 4000,
+    "systemPrompt": "You are a performance analysis agent providing comprehensive production performance analysis and insights.",
+    "dataScope": "all",
+    "confidenceThreshold": 0.8,
+    "enabled": true,
+    "metrics": {
+      "performance": {
+        "enabled": true,
+        "avgResponseTime": true,
+        "tokenUsage": true,
+        "toolExecutionTime": true,
+        "errorRate": true
+      },
+      "quality": {
+        "enabled": true,
+        "userSatisfaction": true,
+        "responseAccuracy": true,
+        "toolSuccessRate": true,
+        "retryRate": true
+      },
+      "business": {
+        "enabled": true,
+        "costPerInteraction": true,
+        "valueDelivered": true,
+        "userEngagement": true,
+        "problemResolutionRate": true
+      }
+    }
+  }
+}

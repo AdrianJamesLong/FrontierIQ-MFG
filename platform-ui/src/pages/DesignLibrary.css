@@ -1,0 +1,161 @@
+/* ============================================
+   DESIGN LIBRARY - SCI-FI/TECH FONT STYLING
+   Light theme with tech fonts only
+   ============================================ */
+
+/* Import tech-style fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Tech color variables - keeping light theme */
+:root {
+  --tech-gray: #6b7280;
+  --tech-dark-gray: #4b5563;
+  --tech-light-gray: #9ca3af;
+  --tech-red: #1C3668;
+}
+
+/* Main Design Library Container */
+.design-library-page {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+}
+
+/* Header with Sci-Fi font styling */
+.design-library-header .header-title-section h1 {
+  font-family: 'Orbitron', monospace !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--tech-gray) !important;
+}
+
+.design-library-header .header-subtitle {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+  color: #666 !important;
+}
+
+/* Search input */
+.design-library-search-input {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.03em;
+}
+
+.design-library-search-input::placeholder {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Document list items */
+.design-library-doc-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.design-library-doc-description {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.02em;
+}
+
+/* Document header in content */
+.design-library-doc-header h1 {
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--tech-gray) !important;
+}
+
+.design-library-doc-header p {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.03em;
+}
+
+/* Markdown content styling */
+.design-library-markdown h1 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--tech-gray) !important;
+}
+
+.design-library-markdown h2 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--tech-gray) !important;
+}
+
+.design-library-markdown h3 {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: #333 !important;
+}
+
+.design-library-markdown h4 {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: #444 !important;
+}
+
+.design-library-markdown p {
+  font-family: 'Rajdhani', sans-serif !important;
+  color: #444 !important;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.design-library-markdown strong {
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+}
+
+.design-library-markdown li {
+  font-family: 'Rajdhani', sans-serif !important;
+  color: #444 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Footer */
+.design-library-footer {
+  font-family: 'Rajdhani', sans-serif !important;
+}
+
+.design-library-print-button {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  transition: all 0.3s ease;
+}
+
+.design-library-print-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading and error states */
+.design-library-loading,
+.design-library-error {
+  font-family: 'Rajdhani', sans-serif !important;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .design-library-header .header-title-section h1 {
+    font-size: 24px !important;
+    letter-spacing: 0.08em !important;
+  }
+  
+  .design-library-doc-title {
+    font-size: 12px !important;
+  }
+}
