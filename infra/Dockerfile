@@ -24,9 +24,19 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend app code (includes agent/ as a subfolder now)
 COPY mfg_core/ /app/
 
+# Copy shared/ alongside main.py (flattened, not a repo-root sibling, in this
+# image) — main.py's own sys.path insertion covers both layouts.
+COPY shared/ /app/shared/
+
 # Copy pre-built React frontend — served by FastAPI as SPA
 COPY platform-ui/dist/ /app/frontend_dist/
 
 EXPOSE 8000
+
+# Pull AMPLIFYIQ_FOUNDRY_API_KEY from the shared kv-amplifyiq Key Vault at
+# startup via the container's managed identity — same pattern Energy/GxP use.
+# Only takes effect once this service's Container App is granted a Key Vault
+# access policy for the "foundry-api-key" secret (backlog #9, not done yet).
+ENV AMPLIFYIQ_USE_KEY_VAULT=true
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

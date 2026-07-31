@@ -1,10 +1,18 @@
 import os
+import sys
 import anthropic
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
+# shared/config.py — see main.py's own path comment for why both locations
+# are added (local dev vs. the Docker image's flattened layout).
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from shared.config import get_settings
+
+_settings = get_settings()
+MODEL = os.environ.get("CLAUDE_MODEL", _settings.foundry_model)
 
 _client: anthropic.Anthropic | None = None
 
@@ -12,10 +20,16 @@ _client: anthropic.Anthropic | None = None
 def _get_client() -> anthropic.Anthropic:
     global _client
     if _client is None:
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        # Azure AI Foundry first (same shared endpoint Energy/GxP use),
+        # falling back to a direct console.anthropic.com key if that's all
+        # that's configured locally.
+        api_key = _settings.foundry_api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not api_key:
-            raise RuntimeError("ANTHROPIC_API_KEY not set in .env")
-        _client = anthropic.Anthropic(api_key=api_key)
+            raise RuntimeError("No Claude credentials set — AMPLIFYIQ_FOUNDRY_API_KEY or ANTHROPIC_API_KEY must be in .env")
+        kwargs = {"api_key": api_key}
+        if _settings.foundry_api_key:
+            kwargs["base_url"] = _settings.foundry_endpoint
+        _client = anthropic.Anthropic(**kwargs)
     return _client
 
 

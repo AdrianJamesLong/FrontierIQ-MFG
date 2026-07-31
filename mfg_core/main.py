@@ -13,6 +13,30 @@ from pathlib import Path
 
 # Add agent directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'agent'))
+
+# shared/config.py lives at the repo root, a sibling of mfg_core/ locally
+# (python main.py run from inside mfg_core/) but gets flattened alongside
+# main.py inside the Docker image (infra/Dockerfile COPYs both mfg_core/ and
+# shared/ into /app) — add both possible locations, harmless if one doesn't
+# exist on this machine.
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, os.path.dirname(__file__))
+from shared.config import get_settings
+
+# Load environment variables from .env file, then resolve Claude via Azure AI
+# Foundry (same shared endpoint FrontierIQ-Energy/FrontierIQ-GxP use) BEFORE
+# importing any agent module below — each of the 7 agent/*.py files reads
+# ANTHROPIC_BASE_URL/ANTHROPIC_API_KEY straight from os.environ at import
+# time (not through claude_client.py, and not lazily), so these must already
+# be set by the time those imports run. load_dotenv()'s default
+# override=False means each agent's own load_dotenv() call won't clobber
+# what's set here.
+load_dotenv()
+_settings = get_settings()
+os.environ["ANTHROPIC_BASE_URL"] = _settings.foundry_endpoint
+os.environ["ANTHROPIC_API_KEY"] = _settings.foundry_api_key or os.environ.get("ANTHROPIC_API_KEY", "")
+os.environ.setdefault("CLAUDE_MODEL", _settings.foundry_model)
+
 from performance_analyst_agent import analyze_performance
 from data_quality_agent import check_data_quality
 from line_operations_agent import analyze_line_operations
@@ -27,9 +51,6 @@ from routes.preview_routes import router as preview_router
 from routes.file_routes import router as file_router
 from routes.agent_config_routes import router as agent_config_router
 from routes.agent_performance_routes import router as agent_performance_router
-
-# Load environment variables from .env file
-load_dotenv()
 
 # SQL connector (lazy import so token auth is deferred until first query)
 sys.path.insert(0, os.path.dirname(__file__))
@@ -74,10 +95,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Anthropic Claude configuration (direct API — not Azure AI Foundry)
-ANTHROPIC_API_KEY  = os.getenv("ANTHROPIC_API_KEY")
-ANTHROPIC_BASE_URL = "https://api.anthropic.com"
-CLAUDE_MODEL       = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-6")
+# Claude via Azure AI Foundry — resolved above, before the agent imports.
+# Anthropic-compatible surface, same request/response shape as the direct
+# API this replaced, so every x-api-key/anthropic-version call site below is
+# unchanged other than where these three values come from.
+ANTHROPIC_API_KEY  = os.environ["ANTHROPIC_API_KEY"]
+ANTHROPIC_BASE_URL = os.environ["ANTHROPIC_BASE_URL"]
+CLAUDE_MODEL       = os.environ["CLAUDE_MODEL"]
 
 # Fabric SQL config (consumed by connectors/fabric_sql.py via env vars)
 FABRIC_DATABASE = os.getenv("FABRIC_DATABASE", "AmplifyIndustrial")
