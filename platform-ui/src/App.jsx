@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { CustomAgentsProvider } from './contexts/CustomAgentsContext'
 import { ProductConfigProvider } from './contexts/ProductConfigContext'
 import Sidebar from './components/Sidebar'
+import SplashGate from './components/SplashGate'
+import AdminPermissions from './pages/AdminPermissions'
 
 // Landing
 import Home from './pages/Home'
@@ -55,14 +58,20 @@ import HelpCentre from './pages/HelpCentre'
 import './App.css'
 
 function App() {
+  // Reachable via /?admin, deliberately not linked from the sidebar — same
+  // isolation as Energy/GxP's Admin Permissions page (backlog #17).
+  const [adminMode] = useState(() => new URLSearchParams(window.location.search).has('admin'))
+
   return (
     <ProductConfigProvider>
       <CustomAgentsProvider>
-        <Router>
-          <div className="app-layout">
-            <Sidebar />
-            <main className="main-content">
-              <Routes>
+        <SplashGate>
+          {adminMode ? <AdminPermissions /> : (
+            <Router>
+              <div className="app-layout">
+                <Sidebar />
+                <main className="main-content">
+                  <Routes>
                 {/* Landing */}
                 <Route path="/" element={<Home />} />
 
@@ -115,6 +124,8 @@ function App() {
             </main>
           </div>
         </Router>
+          )}
+        </SplashGate>
       </CustomAgentsProvider>
     </ProductConfigProvider>
   )

@@ -34,6 +34,14 @@ class Settings(BaseSettings):
     agent_url: str = "http://localhost:8002"
     mcp_server_url: str = "http://localhost:8008"
 
+    # Splash-screen PIN gate (backlog #17, parity with Energy/GxP) — a
+    # deterrent-only shared secret, not real auth. admin_pin is a separate
+    # secret so approving/denying access requests isn't gated by the same
+    # PIN handed to every demo user. Override via AMPLIFYIQ_SPLASH_PIN /
+    # AMPLIFYIQ_ADMIN_PIN at deploy time.
+    splash_pin: str = "1234"
+    admin_pin: str = "9999"
+
     # Key Vault
     key_vault_name: str = "kv-amplifyiq"
     use_key_vault: bool = False

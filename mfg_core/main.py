@@ -51,6 +51,7 @@ from routes.preview_routes import router as preview_router
 from routes.file_routes import router as file_router
 from routes.agent_config_routes import router as agent_config_router
 from routes.agent_performance_routes import router as agent_performance_router
+from routes.auth_routes import router as auth_router
 
 # SQL connector (lazy import so token auth is deferred until first query)
 sys.path.insert(0, os.path.dirname(__file__))
@@ -72,6 +73,7 @@ app.include_router(preview_router)
 app.include_router(file_router)
 app.include_router(agent_config_router)
 app.include_router(agent_performance_router)
+app.include_router(auth_router)
 
 # CORS middleware to allow requests from React frontend
 # Allow all localhost ports for preview instances
